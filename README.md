@@ -21,13 +21,13 @@ Connect Rath AS5600 module with Arduino using the wiring diagram below
 
 ### Programming | 程序
 
-1. Download this repository
+1. Download the lastest release on the right side of the page
 
-    打包下载这个 repo
+    在页面右侧下载最新版本的压缩包
 
-2. Unpack the zip file inside Arduino libraries directory (should be like `..\Sketchbook\libraries\Arduino-Rath-AS5600-main`)
+2. Unpack the zip file inside Arduino libraries directory (should be like `..\Sketchbook\libraries\Arduino-Rath-AS5600-x.x.x`)
 
-    将下载的文件解压到 Arduino 库路径下 (应该是像这样的路径：`..\Sketchbook\libraries\Arduino-Rath-AS5600-main`)
+    将下载的文件解压到 Arduino 库路径下 (应该是像这样的路径：`..\Sketchbook\libraries\Arduino-Rath-AS5600-x.x.x`)
 
 3. Load the library in Arduino program with `#include <AS5600.h>`
 
