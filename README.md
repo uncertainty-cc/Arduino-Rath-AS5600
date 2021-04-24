@@ -6,7 +6,9 @@ AS5600 12-bits Absolute Magnetic Encoder | AS5600 12 位绝对值编码器
 
 ### Wiring | 接线
 
-Connect Rath AS5600 module with Arduino using the wiring diagram below | 将 Rath AS5600 模块与 Arduino 按照如下连接：
+Connect Rath AS5600 module with Arduino using the wiring diagram below
+
+将 Rath AS5600 模块与 Arduino 按照如下连接：
 
 | Rath AS5600 | Arduino              |
 | ----------- | -------------------- |
@@ -19,13 +21,21 @@ Connect Rath AS5600 module with Arduino using the wiring diagram below | 将 Rat
 
 ### Programming | 程序
 
-1. Download this repository | 打包下载这个 repo
+1. Download this repository
 
-2. Unpack the zip file inside Arduino libraries directory (should be like `..\Sketchbook\libraries\Arduino-Rath-AS5600-main`) | 将下载的文件解压到 Arduino 库路径下 (应该是像这样的路径：`..\Sketchbook\libraries\Arduino-Rath-AS5600-main`)
+打包下载这个 repo
 
-3. Load the library in Arduino program with `#include <AS5600.h>` | 在 Arduino 程序中使用 `#include <AS5600.h>` 来加载这个库
+2. Unpack the zip file inside Arduino libraries directory (should be like `..\Sketchbook\libraries\Arduino-Rath-AS5600-main`)
 
-4. Examples can be found in `./examples` folder | 示例程序位于 `./examples` 文件夹中
+将下载的文件解压到 Arduino 库路径下 (应该是像这样的路径：`..\Sketchbook\libraries\Arduino-Rath-AS5600-main`)
+
+3. Load the library in Arduino program with `#include <AS5600.h>`
+
+在 Arduino 程序中使用 `#include <AS5600.h>` 来加载这个库
+
+4. Examples can be found in `./examples` folder
+
+示例程序位于 `./examples` 文件夹中
 
 ## Documentation | 文档
 
