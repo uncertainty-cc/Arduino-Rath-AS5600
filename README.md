@@ -15,6 +15,8 @@ Connect Rath AS5600 module with Arduino using the wiring diagram below | 将 Rat
 | SCL         | A5 (Analog In Pin 5) |
 | SDA         | A4 (Analog In Pin 4) |
 
+![wiring](https://raw.githubusercontent.com/uncertainty-cc/Arduino-Rath-AS5600/main/docs/img/wiring.jpg)
+
 ### Programming | 程序
 
 1. Download this repository | 打包下载这个 repo
