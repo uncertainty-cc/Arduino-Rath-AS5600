@@ -7,7 +7,7 @@ void setup() {
 
   sensor.init();
 
-  Serial.println("ready");
+  Serial.println("Ready");
 }
 
 void loop() {
@@ -17,9 +17,9 @@ void loop() {
   
   Serial.print("\t");
   
-  double angle_normalized = sensor.getNormalized();
-  Serial.print("angle (normalized): ");
-  Serial.print(angle_normalized, 3);
+  double angle_deg = sensor.getDegree();
+  Serial.print("angle (deg): ");
+  Serial.print(angle_deg, 2);
   
   Serial.println("");
 

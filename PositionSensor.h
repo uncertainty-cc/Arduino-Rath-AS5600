@@ -8,21 +8,51 @@ class PositionSensor {
     virtual void init();
 
     /**
-     * @brief get the scaled sensor reading in radian
+     * @brief set the sensor position offset, in radian
      * 
      * @return double 
      */
-    virtual double get();
+    void set(double val) {
+      _offset = val - get();
+    }
+    
+    /**
+     * @brief get the sensor reading in radian
+     * 
+     * @return double 
+     */
+     double get() {
+       return _get() + _offset;
+     }
 
     /**
-     * @brief get the sensor reading range from -1.0 to 1.0
+     * @brief get the sensor reading in radian
      * 
      * @return double 
      */
-    virtual double getNormalized();
+    double getRadian() {
+      return get();
+    }
+
+    /**
+     * @brief get the sensor reading in radian
+     * 
+     * @return double 
+     */
+    double getDegree() {
+      return get() * 180. / M_PI;
+    }
 
   protected:
+
+    /**
+     * @brief subclass should implement this method.
+     * 
+     * @return double 
+     */
+    virtual double _get();
     
+    double _offset = 0;
 };
 
 }

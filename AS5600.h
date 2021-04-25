@@ -11,6 +11,8 @@
 #define M_2PI 6.28318530717958647692
 #endif
 
+#define AS5600_CPR                  ((1UL << 12) / (2. * M_PI))
+
 #define AS5600_I2C_ADDR             0x36U
 
 #define AS5600_ZMCO_ADDR             0x00U
@@ -172,12 +174,17 @@ class AS5600 : public PositionSensor {
       HAL_I2C_enable(I2C0);
     }
 
-    double get() {
-      return getNormalized() * M_PI;
-    }
-    
-    double getNormalized() {
-      return (getAngle() / 2048.) - 1.;
+    double _get() {
+      double val = ((double)getAngle() / AS5600_CPR - M_PI);
+      
+      if (_prev_val < -0.75 * M_PI && val > 0.75 * M_PI)
+        _rotation_count -= 1;
+        
+      if (_prev_val > 0.75 * M_PI && val < -0.75 * M_PI)
+        _rotation_count += 1;
+      
+      _prev_val = val;
+      return val + _rotation_count * 2 * M_PI;
     }
 
     void setTimeout(int timeout) {
@@ -214,6 +221,8 @@ class AS5600 : public PositionSensor {
 
   private:
     uint32_t _timeout = 0;
+    int32_t _rotation_count = 0;
+    double _prev_val = 0;
 };
 
 }
