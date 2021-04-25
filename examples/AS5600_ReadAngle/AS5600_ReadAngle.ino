@@ -11,15 +11,15 @@ void setup() {
 }
 
 void loop() {
-  double angle_normalized = sensor.get();
-  Serial.print("angle (normalized): ");
-  Serial.print(angle_normalized, 3);
+  double angle = sensor.get();
+  Serial.print("angle (rad): ");
+  Serial.print(angle, 3);
   
   Serial.print("\t");
   
-  double angle_radian = sensor.getRadian();
-  Serial.print("angle (rad): ");
-  Serial.print(angle_radian, 3);
+  double angle_normalized = sensor.getNormalized();
+  Serial.print("angle (normalized): ");
+  Serial.print(angle_normalized, 3);
   
   Serial.println("");
 

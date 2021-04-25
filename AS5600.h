@@ -173,10 +173,6 @@ class AS5600 : public PositionSensor {
     }
 
     double get() {
-      return getNormalized() * _scale + _offset;
-    }
-    
-    double getRadian() {
       return getNormalized() * M_PI;
     }
     

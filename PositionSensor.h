@@ -7,20 +7,8 @@ class PositionSensor {
   public:
     virtual void init();
 
-    void set(double value) {
-      setOffset(value - get());
-    }
-
-    void setScaleFactor(double scale) {
-      _scale = scale;
-    }
-
-    void setOffset(double offset) {
-      _offset = offset;
-    }
-
     /**
-     * @brief get the scaled sensor reading
+     * @brief get the scaled sensor reading in radian
      * 
      * @return double 
      */
@@ -33,16 +21,8 @@ class PositionSensor {
      */
     virtual double getNormalized();
 
-    /**
-     * @brief get the sensor reading range in radian
-     * 
-     * @return double 
-     */
-    virtual double getRadian();
-
   protected:
-    double _offset = 0;
-    double _scale = 1;
+    
 };
 
 }
